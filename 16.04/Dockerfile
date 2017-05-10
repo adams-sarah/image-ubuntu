@@ -87,11 +87,13 @@ RUN apt-get -q update && \
 	tar \
 	tcpdump \
 	tmux \
+	$(test ${ARCH} = "armv7l" && echo "libudev1=229-4ubuntu10") \
 	udev \
 	uuid-runtime \
 	vim \
 	wget \
 	whiptail \
+	$(test ${ARCH} = "armv7l" && echo "apt=1.2.15ubuntu0.2 apt-utils") \
 	unattended-upgrades \
 	&& apt-get clean
 
